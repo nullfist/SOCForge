@@ -1,0 +1,18 @@
+title: Volume Shadow Copy Deletion via VSSAdmin
+id: 8db2a192-3c22-4919-86bd-90cdd90030a1
+status: active
+description: Detects the deletion of volume shadow copies which is highly indicative of ransomware operations.
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        Image|endswith: '\vssadmin.exe'
+        CommandLine|contains: 'delete shadows'
+    condition: selection
+falsepositives:
+    - Legitimate system administration backup scripts
+level: critical
+tags:
+    - attack.impact
+    - attack.T1486

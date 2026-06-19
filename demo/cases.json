@@ -1,0 +1,57 @@
+[
+  {
+    "case_id": "CASE-A09C92B9",
+    "title": "Incident Investigation - Suspicious APT29 Activity",
+    "severity": "Medium",
+    "host": "FIN-WS-001",
+    "impacted_user": "mmartin",
+    "timeline": [
+      {
+        "timestamp": "2026-06-15T22:19:03.584020",
+        "event_type": "ProxyAccess",
+        "details": "http://malicious-update.com/payload.exe"
+      },
+      {
+        "timestamp": "2026-06-15T22:34:03.584020",
+        "event_type": "ProcessCreation",
+        "details": "schtasks /create /tn \"WindowsUpdater\" /tr \"C:\\Windows\\Temp\\payload.exe\" /sc hourly"
+      },
+      {
+        "timestamp": "2026-06-15T23:34:03.584020",
+        "event_type": "ProcessCreation",
+        "details": "powershell.exe -ExecutionPolicy Bypass -File C:\\Windows\\Temp\\privesc.ps1"
+      },
+      {
+        "timestamp": "2026-06-15T23:44:03.584020",
+        "event_type": "ProcessCreation",
+        "details": "net group \"domain admins\" /domain"
+      },
+      {
+        "timestamp": "2026-06-16T01:44:03.584020",
+        "event_type": "NetworkConnection",
+        "details": "Incident Action Detected"
+      },
+      {
+        "timestamp": "2026-06-16T01:44:03.584020",
+        "event_type": "Authentication",
+        "details": "Incident Action Detected"
+      },
+      {
+        "timestamp": "2026-06-16T02:14:03.584020",
+        "event_type": "ProcessCreation",
+        "details": "ntdsutil \"ac i ntds\" \"ifm\" \"create full C:\\temp\\ntds\" q q"
+      },
+      {
+        "timestamp": "2026-06-16T02:24:03.584020",
+        "event_type": "NetworkConnection",
+        "details": "Incident Action Detected"
+      }
+    ],
+    "questions": [
+      "1. Identify the initial point of entry or command execution context.",
+      "2. What MITRE ATT&CK techniques were associated with this APT29 event?",
+      "3. What hosts and users were directly impacted by the adversary?",
+      "4. Draft a containment plan to isolate the threat vector."
+    ]
+  }
+]

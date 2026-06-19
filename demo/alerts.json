@@ -1,0 +1,130 @@
+[
+  {
+    "alert_id": "976fc776-cfdc-4a38-bf91-7241b5ccefc3",
+    "rule_name": "SOCForge Detected: Phishing",
+    "timestamp": "2026-06-15T22:19:03.584020",
+    "host": "FIN-WS-001",
+    "user": "mmartin",
+    "severity": "High",
+    "description": "Adversaries may send phishing messages to gain access to victim systems.",
+    "mitre_mapping": {
+      "id": "T1566",
+      "name": "Phishing",
+      "tactic": "Initial Access",
+      "description": "Adversaries may send phishing messages to gain access to victim systems.",
+      "severity": "High"
+    }
+  },
+  {
+    "alert_id": "0f1b99b7-864d-46c4-b63c-ce74072dd8a2",
+    "rule_name": "SOCForge Detected: Scheduled Task Persistence",
+    "timestamp": "2026-06-15T22:34:03.584020",
+    "host": "FIN-WS-001",
+    "user": "SYSTEM",
+    "severity": "Medium",
+    "description": "Persistence scheduled task created on FIN-WS-001.",
+    "mitre_mapping": {
+      "id": "T1053",
+      "name": "Scheduled Task/Job",
+      "tactic": "Persistence",
+      "description": "Adversaries may abuse task scheduling mechanisms to facilitate one-time or recurring execution of malicious code.",
+      "severity": "Medium"
+    }
+  },
+  {
+    "alert_id": "7526f2ab-fe35-4633-9597-d77018a8bace",
+    "rule_name": "SOCForge Detected: Valid Accounts",
+    "timestamp": "2026-06-15T23:34:03.584020",
+    "host": "FIN-WS-001",
+    "user": "SYSTEM",
+    "severity": "High",
+    "description": "Adversaries may obtain and abuse credentials of existing accounts.",
+    "mitre_mapping": {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Privilege Escalation",
+      "description": "Adversaries may obtain and abuse credentials of existing accounts.",
+      "severity": "High"
+    }
+  },
+  {
+    "alert_id": "2adbad73-0dda-4163-8f4d-ee7c007cb2a3",
+    "rule_name": "SOCForge Detected: Valid Accounts",
+    "timestamp": "2026-06-15T23:44:03.584020",
+    "host": "FIN-WS-001",
+    "user": "SYSTEM",
+    "severity": "High",
+    "description": "Adversaries may obtain and abuse credentials of existing accounts.",
+    "mitre_mapping": {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Privilege Escalation",
+      "description": "Adversaries may obtain and abuse credentials of existing accounts.",
+      "severity": "High"
+    }
+  },
+  {
+    "alert_id": "dc7ab41d-99b3-47bf-8910-e911525afb14",
+    "rule_name": "SOCForge Detected: Remote Services",
+    "timestamp": "2026-06-16T01:44:03.584020",
+    "host": "FIN-WS-001",
+    "user": "mmartin",
+    "severity": "High",
+    "description": "Adversaries may use valid credentials to log into a service on another system.",
+    "mitre_mapping": {
+      "id": "T1021",
+      "name": "Remote Services",
+      "tactic": "Lateral Movement",
+      "description": "Adversaries may use valid credentials to log into a service on another system.",
+      "severity": "High"
+    }
+  },
+  {
+    "alert_id": "2ea3d0a2-7fee-47a6-a7e4-c72618b62c3a",
+    "rule_name": "SOCForge Detected: Remote Services",
+    "timestamp": "2026-06-16T01:44:03.584020",
+    "host": "FIN-DC-01",
+    "user": "Administrator",
+    "severity": "High",
+    "description": "Adversaries may use valid credentials to log into a service on another system.",
+    "mitre_mapping": {
+      "id": "T1021",
+      "name": "Remote Services",
+      "tactic": "Lateral Movement",
+      "description": "Adversaries may use valid credentials to log into a service on another system.",
+      "severity": "High"
+    }
+  },
+  {
+    "alert_id": "302bf2c0-4d21-4112-a0fa-3f49142c4d93",
+    "rule_name": "SOCForge Detected: Email Collection",
+    "timestamp": "2026-06-16T02:14:03.584020",
+    "host": "FIN-DC-01",
+    "user": "Administrator",
+    "severity": "Medium",
+    "description": "Adversaries may target user email repositories to collect sensitive information.",
+    "mitre_mapping": {
+      "id": "T1114",
+      "name": "Email Collection",
+      "tactic": "Collection",
+      "description": "Adversaries may target user email repositories to collect sensitive information.",
+      "severity": "Medium"
+    }
+  },
+  {
+    "alert_id": "4430e290-895d-4b34-8673-410ee4a7d187",
+    "rule_name": "SOCForge Detected: Exfiltration Over Alternative Protocol",
+    "timestamp": "2026-06-16T02:24:03.584020",
+    "host": "FIN-DC-01",
+    "user": "Administrator",
+    "severity": "High",
+    "description": "Adversaries may exfiltrate data using alternative protocols compared to standard command and control channels.",
+    "mitre_mapping": {
+      "id": "T1048",
+      "name": "Exfiltration Over Alternative Protocol",
+      "tactic": "Exfiltration",
+      "description": "Adversaries may exfiltrate data using alternative protocols compared to standard command and control channels.",
+      "severity": "High"
+    }
+  }
+]

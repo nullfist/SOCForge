@@ -1,0 +1,143 @@
+from typing import Dict, Any, List, Optional
+
+MITRE_ATTACK_DB = {
+    "T1110": {
+        "id": "T1110",
+        "name": "Brute Force",
+        "tactic": "Credential Access",
+        "description": "Adversaries may use brute force attacks to obtain credentials.",
+        "severity": "Medium"
+    },
+    "T1566": {
+        "id": "T1566",
+        "name": "Phishing",
+        "tactic": "Initial Access",
+        "description": "Adversaries may send phishing messages to gain access to victim systems.",
+        "severity": "High"
+    },
+    "T1053": {
+        "id": "T1053",
+        "name": "Scheduled Task/Job",
+        "tactic": "Persistence",
+        "description": "Adversaries may abuse task scheduling mechanisms to facilitate one-time or recurring execution of malicious code.",
+        "severity": "Medium"
+    },
+    "T1078": {
+        "id": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation",
+        "description": "Adversaries may obtain and abuse credentials of existing accounts.",
+        "severity": "High"
+    },
+    "T1021": {
+        "id": "T1021",
+        "name": "Remote Services",
+        "tactic": "Lateral Movement",
+        "description": "Adversaries may use valid credentials to log into a service on another system.",
+        "severity": "High"
+    },
+    "T1114": {
+        "id": "T1114",
+        "name": "Email Collection",
+        "tactic": "Collection",
+        "description": "Adversaries may target user email repositories to collect sensitive information.",
+        "severity": "Medium"
+    },
+    "T1486": {
+        "id": "T1486",
+        "name": "Data Encrypted for Impact",
+        "tactic": "Impact",
+        "description": "Adversaries may encrypt data on victim systems to disrupt availability of system and network resources.",
+        "severity": "Critical"
+    },
+    "T1048": {
+        "id": "T1048",
+        "name": "Exfiltration Over Alternative Protocol",
+        "tactic": "Exfiltration",
+        "description": "Adversaries may exfiltrate data using alternative protocols compared to standard command and control channels.",
+        "severity": "High"
+    },
+    "T1558.003": {
+        "id": "T1558.003",
+        "name": "Kerberoasting",
+        "tactic": "Credential Access",
+        "description": "Adversaries may abuse Kerberos ticket requests to obtain passwords for offline cracking.",
+        "severity": "High"
+    },
+    "T1003.006": {
+        "id": "T1003.006",
+        "name": "DCSync",
+        "tactic": "Credential Access",
+        "description": "Adversaries may request Active Directory replication data to obtain password hashes.",
+        "severity": "Critical"
+    },
+    "T1621": {
+        "id": "T1621",
+        "name": "MFA Fatigue",
+        "tactic": "Credential Access",
+        "description": "Adversaries may bomb users with MFA requests until they accept.",
+        "severity": "High"
+    }
+}
+
+THREAT_INTEL_ACTORS = {
+    "APT29": {
+        "name": "APT29",
+        "aliases": ["Cozy Bear", "Nobelium"],
+        "origin": "Russia",
+        "campaign": "SolarWinds Style Supply Chain Operations",
+        "ttps": ["T1566", "T1053", "T1078", "T1021", "T1048"]
+    },
+    "FIN7": {
+        "name": "FIN7",
+        "aliases": ["Carbon Spider"],
+        "origin": "Eastern Europe",
+        "campaign": "Financial Portal Targeting and SPN Harvesting",
+        "ttps": ["T1566", "T1558.003", "T1114", "T1048"]
+    },
+    "RansomCrew": {
+        "name": "RansomCrew",
+        "aliases": ["LockBit Affiliate"],
+        "origin": "Global / Cybercrime",
+        "campaign": "Double Extortion Ransomware operations",
+        "ttps": ["T1110", "T1053", "T1486"]
+    }
+}
+
+def get_mitre_mapping(technique_id: str) -> Optional[Dict[str, Any]]:
+    """Retrieves MITRE ATT&CK technique details by ID."""
+    return MITRE_ATTACK_DB.get(technique_id)
+
+def get_actor_profile(actor_name: str) -> Optional[Dict[str, Any]]:
+    """Retrieves Threat Intel details for a given adversary group."""
+    return THREAT_INTEL_ACTORS.get(actor_name)
+
+def generate_navigator_layer(techniques_simulated: List[str], techniques_alerted: List[str]) -> Dict[str, Any]:
+    """Generates a standard JSON layer importable by MITRE ATT&CK Navigator."""
+    tech_entries = []
+    
+    for t_id in techniques_simulated:
+        is_detected = t_id in techniques_alerted
+        tech_entries.append({
+            "techniqueID": t_id,
+            "color": "#4caf50" if is_detected else "#ff9800",
+            "comment": "Detected (True Positive)" if is_detected else "Missed Event (False Negative)",
+            "enabled": True,
+            "score": 100 if is_detected else 50
+        })
+        
+    return {
+        "name": "SOCForge Cyber Range Coverage",
+        "version": "4.3",
+        "domain": "enterprise-attack",
+        "description": "MITRE ATT&CK telemetry coverage heatmap generated by SOCForge",
+        "filters": {
+            "platforms": ["windows", "linux", "network", "iaas"]
+        },
+        "techniques": tech_entries,
+        "gradient": {
+            "colors": ["#ff9800", "#4caf50"],
+            "minValue": 0,
+            "maxValue": 100
+        }
+    }

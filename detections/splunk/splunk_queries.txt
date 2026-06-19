@@ -1,0 +1,8 @@
+# Brute Force Detection
+index=security EventID=4625 | stats count by TargetUserName, IpAddress | where count > 10
+
+# Lateral Movement Detection
+index=security EventID=4624 LogonType=10 | stats count by TargetUserName, IpAddress, Computer
+
+# Volume Shadow Copy Deletion
+index=security EventID=1 Image="*vssadmin.exe" CommandLine="*delete shadows*"

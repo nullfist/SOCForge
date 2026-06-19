@@ -1,0 +1,17 @@
+{
+  "precision": 100.0,
+  "recall": 100.0,
+  "coverage": 100.0,
+  "true_positives": 6,
+  "false_positives": 0,
+  "false_negatives": 0,
+  "detected_techniques": [
+    "T1114",
+    "T1078",
+    "T1566",
+    "T1053",
+    "T1021",
+    "T1048"
+  ],
+  "missed_techniques": []
+}

@@ -1,0 +1,11 @@
+name: Finance Ransomware Simulation
+duration_hours: 48
+output_dir: output/
+company:
+  name: FinanceCorp
+  industry: Banking
+  size: medium
+steps:
+  - Phishing
+  - Lateral Movement
+  - Ransomware

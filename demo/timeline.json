@@ -1,0 +1,66 @@
+[
+  {
+    "timestamp": "2026-06-15T22:19:03.584020",
+    "host": "FIN-WS-001",
+    "username": "mmartin",
+    "action": "ProxyAccess",
+    "mitre_technique": "T1566",
+    "scenario": "APT29"
+  },
+  {
+    "timestamp": "2026-06-15T22:34:03.584020",
+    "host": "FIN-WS-001",
+    "username": "SYSTEM",
+    "action": "ProcessCreation",
+    "mitre_technique": "T1053",
+    "scenario": "APT29"
+  },
+  {
+    "timestamp": "2026-06-15T23:34:03.584020",
+    "host": "FIN-WS-001",
+    "username": "SYSTEM",
+    "action": "ProcessCreation",
+    "mitre_technique": "T1078",
+    "scenario": "APT29"
+  },
+  {
+    "timestamp": "2026-06-15T23:44:03.584020",
+    "host": "FIN-WS-001",
+    "username": "SYSTEM",
+    "action": "ProcessCreation",
+    "mitre_technique": "T1078",
+    "scenario": "APT29"
+  },
+  {
+    "timestamp": "2026-06-16T01:44:03.584020",
+    "host": "FIN-WS-001",
+    "username": "mmartin",
+    "action": "NetworkConnection",
+    "mitre_technique": "T1021",
+    "scenario": "APT29"
+  },
+  {
+    "timestamp": "2026-06-16T01:44:03.584020",
+    "host": "FIN-DC-01",
+    "username": "Administrator",
+    "action": "Authentication",
+    "mitre_technique": "T1021",
+    "scenario": "APT29"
+  },
+  {
+    "timestamp": "2026-06-16T02:14:03.584020",
+    "host": "FIN-DC-01",
+    "username": "Administrator",
+    "action": "ProcessCreation",
+    "mitre_technique": "T1114",
+    "scenario": "APT29"
+  },
+  {
+    "timestamp": "2026-06-16T02:24:03.584020",
+    "host": "FIN-DC-01",
+    "username": "Administrator",
+    "action": "NetworkConnection",
+    "mitre_technique": "T1048",
+    "scenario": "APT29"
+  }
+]

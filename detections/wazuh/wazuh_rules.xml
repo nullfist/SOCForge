@@ -1,0 +1,17 @@
+<group name="socforge_threats,">
+  <rule id="100100" level="10">
+    <decoded_as>json</decoded_as>
+    <field name="mitre">T1566</field>
+    <description>SOCForge simulated Phishing attack technique T1566 detected</description>
+  </rule>
+  <rule id="100101" level="10">
+    <decoded_as>json</decoded_as>
+    <field name="mitre">T1021</field>
+    <description>SOCForge simulated Lateral Movement technique T1021 detected</description>
+  </rule>
+  <rule id="100102" level="12">
+    <decoded_as>json</decoded_as>
+    <field name="mitre">T1486</field>
+    <description>SOCForge simulated Ransomware attack technique T1486 detected</description>
+  </rule>
+</group>

@@ -1,0 +1,79 @@
+{
+  "T1110": {
+    "id": "T1110",
+    "name": "Brute Force",
+    "tactic": "Credential Access",
+    "description": "Adversaries may use brute force attacks to obtain credentials.",
+    "severity": "Medium"
+  },
+  "T1566": {
+    "id": "T1566",
+    "name": "Phishing",
+    "tactic": "Initial Access",
+    "description": "Adversaries may send phishing messages to gain access to victim systems.",
+    "severity": "High"
+  },
+  "T1053": {
+    "id": "T1053",
+    "name": "Scheduled Task/Job",
+    "tactic": "Persistence",
+    "description": "Adversaries may abuse task scheduling mechanisms to facilitate one-time or recurring execution of malicious code.",
+    "severity": "Medium"
+  },
+  "T1078": {
+    "id": "T1078",
+    "name": "Valid Accounts",
+    "tactic": "Privilege Escalation",
+    "description": "Adversaries may obtain and abuse credentials of existing accounts.",
+    "severity": "High"
+  },
+  "T1021": {
+    "id": "T1021",
+    "name": "Remote Services",
+    "tactic": "Lateral Movement",
+    "description": "Adversaries may use valid credentials to log into a service on another system.",
+    "severity": "High"
+  },
+  "T1114": {
+    "id": "T1114",
+    "name": "Email Collection",
+    "tactic": "Collection",
+    "description": "Adversaries may target user email repositories to collect sensitive information.",
+    "severity": "Medium"
+  },
+  "T1486": {
+    "id": "T1486",
+    "name": "Data Encrypted for Impact",
+    "tactic": "Impact",
+    "description": "Adversaries may encrypt data on victim systems to disrupt availability of system and network resources.",
+    "severity": "Critical"
+  },
+  "T1048": {
+    "id": "T1048",
+    "name": "Exfiltration Over Alternative Protocol",
+    "tactic": "Exfiltration",
+    "description": "Adversaries may exfiltrate data using alternative protocols compared to standard command and control channels.",
+    "severity": "High"
+  },
+  "T1558.003": {
+    "id": "T1558.003",
+    "name": "Kerberoasting",
+    "tactic": "Credential Access",
+    "description": "Adversaries may abuse Kerberos ticket requests to obtain passwords for offline cracking.",
+    "severity": "High"
+  },
+  "T1003.006": {
+    "id": "T1003.006",
+    "name": "DCSync",
+    "tactic": "Credential Access",
+    "description": "Adversaries may request Active Directory replication data to obtain password hashes.",
+    "severity": "Critical"
+  },
+  "T1621": {
+    "id": "T1621",
+    "name": "MFA Fatigue",
+    "tactic": "Credential Access",
+    "description": "Adversaries may bomb users with MFA requests until they accept.",
+    "severity": "High"
+  }
+}
